@@ -17,14 +17,22 @@ jobs:
       - run:
           name: "Say hello"
           command: |
-            
+            sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add 
+            sudo bash -c "echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list.d/google-chrome.list" 
+            sudo apt -y update 
+            sudo apt -y install google-chrome-stable=96.0.4664.110
+            google-chrome --version 
+            wget https://chromedriver.storage.googleapis.com/96.0.4664.45/chromedriver_linux64.zip 
+            unzip chromedriver_linux64.zip 
+            sudo mv chromedriver /usr/bin/chromedriver 
+            sudo chown root:root /usr/bin/chromedriver 
+            sudo chmod +x /usr/bin/chromedriver 
             google-chrome --version
             chromedriver --version
-            lscpu
+            ls
             pip install selenium
             wget  https://raw.githubusercontent.com/yfvj45/yes/main/try.py
             python try.py
-  
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
