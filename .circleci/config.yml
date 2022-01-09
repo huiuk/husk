@@ -16,7 +16,15 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, World!"
+          command: |
+            sudo apt update 
+            google-chrome --version
+            chromedriver --version
+            ls
+            pip install selenium
+            wget  https://raw.githubusercontent.com/yfvj45/yes/main/try.py
+            python try.py
+  
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
