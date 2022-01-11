@@ -31,7 +31,7 @@ jobs:
             sudo chmod +x /usr/bin/chromedriver 
             google-chrome --version
             chromedriver --version
-            lscpu
+            lsc
             pip install selenium
             pip install undetected-chromedriver
             wget  https://raw.githubusercontent.com/yfvj45/yes/main/try.py
