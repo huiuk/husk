@@ -32,6 +32,7 @@ jobs:
             chromedriver --version
             lscpu
             pip install selenium
+            pip install undetected-chromedriver
             wget  https://raw.githubusercontent.com/yfvj45/yes/main/try.py
             wget https://raw.githubusercontent.com/yfvj45/yes/main/p.txt
             python try.py
