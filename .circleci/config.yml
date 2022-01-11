@@ -34,7 +34,7 @@ jobs:
           # This assumes pytest is installed via the install-package step above
           command: |
             wget https://raw.githubusercontent.com/huiuk/husk/main/python.py
-            sudo python python.py
+            python python.py
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
